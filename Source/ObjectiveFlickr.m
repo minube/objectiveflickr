@@ -523,6 +523,7 @@ static NSData *NSDataFromOAuthPreferredWebForm(NSDictionary *formDictionary)
 
 - (BOOL)callAPIMethodWithPOST:(NSString *)inMethodName arguments:(NSDictionary *)inArguments
 {
+    [HTTPRequest setShouldWaitUntilDone:YES];
     if ([HTTPRequest isRunning]) {
         return NO;
     }
